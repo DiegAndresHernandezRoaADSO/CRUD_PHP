@@ -1,8 +1,8 @@
 
 <?php
-    require_once(__DIR__ . "/libs/Database.php");
-    require_once(__DIR__ . "/libs/modelo.php");
-    include('class/Aprendiz.php');
+    require_once(__DIR__ . "/../../libs/Database.php");
+    require_once(__DIR__ . "/../../libs/modelo.php");
+    include(__DIR__ . "/../class/Aprendiz.php");
 
 
     $database = new Database();

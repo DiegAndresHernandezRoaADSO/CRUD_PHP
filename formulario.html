@@ -8,29 +8,42 @@
 </head>
 <body>
 
-    <form action="./controladores/guardar.php" method="post">
+    <form action="controladores/aprendiz/guardar.php" method="post">
+        <div>
+            <label for="first_name">Nombre</label>
+            <input type="text" name="first_name" id="first_name">
+        </div>
+
+        <div>
+            <label for="last_name">Apellido</label>
+            <input type="text" name="last_name" id="last_name">
+        </div>
+
+        <div>
+            <label for="email">Correo</label>
+            <input type="text" name="email" id="email">
+        </div>
+
+        <div>
+            <label for="phone">Telefono</label>
+            <input type="number" name="phone" id="phone">
+        </div>
+
+        <div>
+            <label for="dni">Dni</label>
+            <input type="number" name="dni" id="dni">
+        </div>
+
+        <div>
+            <label for="user_account">Cuenta</label>
+            <input type="text" name="user_account" id="user_account">
+        </div>
+
+        <div>
+            <label for="average">Promedio</label>
+            <input type="text" name="average" id="average">
+        </div>
         
-        <label for="first_name">Nombre</label>
-        <input type="text" name="first_name" id="first_name">
-
-        <label for="last_name">Apellido</label>
-        <input type="text" name="last_name" id="last_name">
-
-        <label for="email">Correo</label>
-        <input type="text" name="email" id="email">
-
-        <label for="phone">Telefono</label>
-        <input type="number" name="phone" id="phone">
-
-        <label for="dni">Dni</label>
-        <input type="number" name="dni" id="dni">
-
-        <label for="user_account">Cuenta</label>
-        <input type="text" name="user_account" id="user_account">
-
-        <label for="average">Promedio</label>
-        <input type="text" name="average" id="average">
-
         <button class="boton" type="submit">Enviar</button>
     </form>
     

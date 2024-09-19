@@ -1,8 +1,8 @@
 <?php
 
-require_once(__DIR__ . "/../libs/Database.php");
-require_once(__DIR__ . "/../libs/modelo.php");
-include('../class/Aprendiz.php');
+require_once(__DIR__ . "../../../libs/Database.php");
+require_once(__DIR__ . "../../../libs/modelo.php");
+include("../../class/Aprendiz.php");
 
 
 $nombre = isset($_POST["first_name"]) ? 
@@ -37,17 +37,22 @@ if ($nombre && $apellido && $correo && $telefono && $dni){
     
     $aprendiz = new Aprendiz($connection);
 
-    $aprendiz -> store([
-        'first_name' => $nombre,
-        'last_name' => $apellido,
-        'email' => $correo,
-        'phone' => $telefono,
-        'dni' => $dni,
+    $valor = $aprendiz -> store([
+        'first_name'   => $nombre,
+        'last_name'    => $apellido,
+        'email'        => $correo,
+        'phone'        => $telefono,
+        'dni'          => $dni,
         'user_account' => $cuenta,
-        'average' => $promedio
-        ]
-    );
+        'average'      => $promedio
+    ]);
+
+    if ($valor != null) {
+        header("Location:", "/ADSO/2696521/controladores/listar.php");
+    }
 
 }else {
     echo "Faltan campos obligatorios";
 }
+
+
