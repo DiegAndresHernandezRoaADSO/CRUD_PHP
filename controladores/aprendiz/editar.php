@@ -13,14 +13,9 @@ $aprendiz = new Aprendiz($connection);
 $id = $_REQUEST['id'];
 $usuario = $aprendiz->getByid($id);
 
-echo"<pre>";
-print_r($usuario);
-echo"</pre>";
-
-
 ?>
 
-<form action="Actualizar.php" method="post">
+<form action="controladores/aprendiz/Actualizar.php" method="post">
     
     <div>
         <input type=""  name="id"  value="<?=$usuario["id"] ?>">

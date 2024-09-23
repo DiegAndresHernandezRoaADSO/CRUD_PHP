@@ -33,19 +33,16 @@
         public function store($data){
             $sql = "INSERT INTO users (";
             foreach($data as $key => $value){
-
                 if ($value == "") continue;
-
-                $sql .= ":{$key},";
+                $sql .= "{$key}, ";
             }
     
-    
-            $sql = trim($sql, ',');
+            $sql = trim($sql, ', ');
             $sql .= ") VALUES (";
     
             foreach($data as $key => $value){
                 if ($value == "") continue;
-                $sql .=":{$key},";
+                $sql .=":{$key}, ";
             }
             
             $sql = trim ($sql, ', ');
@@ -59,33 +56,30 @@
             }
             $stm->execute();
 
-            return true;
+            return $this -> db -> lastInsertId();
         }
 
         public function update($id ,$data)
         
         {
-            echo"<pre>";
-            print_r($data);
-            echo"</pre>";
-
-
             $sql = "UPDATE users set ";
 
 
             foreach ($data as $key => $value) {
-
+                if ($value == "") continue;
                 $sql .= "{$key} = :{$key}, ";
             }
 
             $sql = trim($sql, ', ');
             $sql .= " WHERE id = :id";
             $stm = $this-> db->prepare($sql);
+
             foreach ($data as $key => $value) {
+                if ($value == "") continue;
                 $stm->bindValue(":{$key}", $value);
             }
-
             $stm->bindValue(":id", $id);
+            
             $stm->execute();
         }
         

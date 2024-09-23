@@ -5,25 +5,15 @@ require_once(__DIR__ . "../../../libs/modelo.php");
 include("../../class/Aprendiz.php");
 
 
-$nombre = isset($_POST["first_name"]) ? 
-    ($_POST["first_name"] != "" ? $_POST["first_name"] : false) : 
-    false;
+$nombre = isset($_POST["first_name"]) ? ($_POST["first_name"] != "" ? $_POST["first_name"] : false) : false;
 
-$apellido = isset($_POST["last_name"]) ? 
-    ($_POST["last_name"] != "" ? $_POST["last_name"] : false) : 
-    false;
+$apellido = isset($_POST["last_name"]) ? ($_POST["last_name"] != "" ? $_POST["last_name"] : false) : false;
 
-$correo = isset($_POST["email"]) ? 
-    ($_POST["email"] != "" ? $_POST["email"] : false) : 
-    false;
+$correo = isset($_POST["email"]) ? ($_POST["email"] != "" ? $_POST["email"] : false) : false;
 
-$telefono = isset($_POST["phone"]) ? 
-    ($_POST["phone"] != "" ? $_POST["phone"] : false) : 
-    false;
+$telefono = isset($_POST["phone"]) ? ($_POST["phone"] != "" ? $_POST["phone"] : false) : false;
 
-$dni = isset($_POST["dni"]) ? 
-    ($_POST["dni"] != "" ? $_POST["dni"] : false) : 
-    false;
+$dni = isset($_POST["dni"]) ? ($_POST["dni"] != "" ? $_POST["dni"] : false) : false;
 
 $cuenta = isset($_POST["user_account"]) ? $_POST["user_account"] : ' ';
 
